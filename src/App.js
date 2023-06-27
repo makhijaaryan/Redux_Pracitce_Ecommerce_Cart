@@ -1,10 +1,21 @@
 import './App.css';
+import Header from './components/Header';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Routes, Route } from 'react-router-dom';
+import CardDetail from './components/CardDetail';
+import Cards from './components/Cards';
+
+
 
 function App() {
   return (
-    <div className="container">
-      <h1>try</h1>
-    </div>
+    <>
+      <Header/>
+      <Routes>
+        <Route path='/' element={<Cards/>} />
+        <Route path='/cart' element={<CardDetail/>} />
+      </Routes>
+    </>
 
   );
 }

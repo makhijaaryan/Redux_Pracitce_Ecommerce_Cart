@@ -13,7 +13,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<Cards/>} />
-        <Route path='/cart' element={<CardDetail/>} />
+        <Route path='/cart/:id' element={<CardDetail/>} />
       </Routes>
     </>
   );

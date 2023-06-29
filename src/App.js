@@ -16,7 +16,6 @@ function App() {
         <Route path='/cart' element={<CardDetail/>} />
       </Routes>
     </>
-
   );
 }
 

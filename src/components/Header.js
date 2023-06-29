@@ -7,8 +7,15 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { NavLink } from 'react-router-dom';
 import img from "./cart.gif"
+import { useDispatch, useSelector } from 'react-redux';
 
 const Header = () => {
+
+    const getdate = useSelector((state)=>state.cartReducer)
+    // console.log(getdate);
+
+    const dispatch = useDispatch()
+
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -17,6 +24,7 @@ const Header = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    
     return (
         <>
             <Navbar bg="dark" data-bs-theme="dark" style={{ height: "60px" }} >
@@ -31,9 +39,8 @@ const Header = () => {
                         aria-haspopup="true"
                         aria-expanded={open ? 'true' : undefined}
                         onClick={handleClick}>
-                        <i class="fa-solid fa-cart-shopping text-light" style={{ fontSize: 25, cursor: "pointer" }}></i>
+                        <i className="fa-solid fa-cart-shopping text-light" style={{ fontSize: 25, cursor: "pointer" }}></i>
                     </Badge>
-
                 </Container>
                 <Menu
                         id="basic-menu"
@@ -52,7 +59,7 @@ const Header = () => {
                             <p style={{fontSize: 22}} >Your cart is empty</p>
                             <img src={img}  alt="/" className='emptycart_img' style={{width:"5rem", padding:10}}/>
                         </div>
-                    </Menu>
+                </Menu>
             </Navbar>
         </>
     )

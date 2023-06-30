@@ -1,5 +1,16 @@
+const getLocalCardData = () =>{
+    let localCartData = localStorage.getItem("CART")
+    if(localCartData===[]){
+        return []
+    }
+    else{
+        return JSON.parse(localCartData);
+    }
+}
+
 const INIT_STATE = {
     carts: []
+    // carts: getLocalCardData()
 };
 
 export const cartReducer = (state = INIT_STATE, action) => {

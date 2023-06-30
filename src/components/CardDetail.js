@@ -32,7 +32,10 @@ const CardDetail = () => {
         //eslint-disable-next-line
     }, [id])
 
-
+    useEffect(() => {
+        localStorage.setItem("CART", JSON.stringify((state)=>state.cartReducer.carts))
+    },[])
+    
 
     const send = (e) => {
         dispatch(ADD(e))

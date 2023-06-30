@@ -10,10 +10,10 @@ import Cards from './components/Cards';
 function App() {
   return (
     <>
-      <Header/>
+      <Header />
       <Routes>
-        <Route path='/' element={<Cards/>} />
-        <Route path='/cart/:id' element={<CardDetail/>} />
+        <Route path='/' element={<Cards />} />
+        <Route path='/cart/:id' element={<CardDetail />} />
       </Routes>
     </>
   );

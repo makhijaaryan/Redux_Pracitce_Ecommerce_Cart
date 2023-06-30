@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table';
 import './style.css'
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { DELETE } from '../redux/actions/action';
+import { DELETE, ADD, REMOVE_ONE } from '../redux/actions/action';
 
 const CardDetail = () => {
 
@@ -20,6 +20,7 @@ const CardDetail = () => {
 
     const compare = () => {
         let compareData = getdata.filter((e) => {
+            // eslint-disable-next-line eqeqeq
             return (e.id == id)
         });
         setData(compareData);
@@ -28,11 +29,22 @@ const CardDetail = () => {
 
     useEffect(() => {
         compare();
+        //eslint-disable-next-line
     }, [id])
+
+
+
+    const send = (e) => {
+        dispatch(ADD(e))
+    }
 
     const dlt = (id) => {
         dispatch(DELETE(id))
         history("/")
+    }
+
+    const remove = (item) => {
+        dispatch(REMOVE_ONE(item))
     }
 
     return (
@@ -54,7 +66,15 @@ const CardDetail = () => {
                                                     <tr>
                                                         <p> <strong>Item</strong> : {ele.rname} </p>
                                                         <p> <strong>Price</strong> : ${ele.price} </p>
-                                                        <p> <strong>Total</strong> : $399 </p>
+                                                        <p> <strong>Total</strong> : ${ele.price * ele.qnty} </p>
+
+                                                        <div className="mt-5 d-flex justify-content-between align-items-center" style={{ width: 100, cursor: "pointer", background: "#ddd", color: '#111' }}>
+                                                            <span style={{ fontSize: 24 }} onClick={ele.qnty <= 1 ? () => dlt(ele.id) : () => remove(ele)}>-</span>
+                                                            <span style={{ fontSize: 22 }}>{ele.qnty}</span>
+                                                            <span style={{ fontSize: 24 }} onClick={() => send(ele)}>+</span>
+
+                                                        </div>
+
                                                     </tr>
                                                     <tr>
                                                         <p><strong>Rating : </strong><span style={{ background: "green", color: "#fff", padding: "2px, 5px", borderRadius: "5px" }}>{ele.rating} ★</span></p>

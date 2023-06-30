@@ -30,19 +30,21 @@ const Header = () => {
         setAnchorEl(null);
     };
 
-    const dlt = (id) =>{
+    const dlt = (id) => {
         dispatch(DELETE(id))
     }
 
-    const total = () =>{
+    const total = () => {
         let price = 0;
-        getdata.map((ele, k)=>{
-            price += ele.price
+        // eslint-disable-next-line
+        getdata.map((ele) => {
+
+            price += ele.price * ele.qnty
         })
         setPrice(price);
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         total();
     })
 
@@ -84,26 +86,26 @@ const Header = () => {
                                     </thead>
                                     <tbody>
                                         {
-                                            getdata.map((e)=>{
-                                                return(
+                                            getdata.map((e) => {
+                                                return (
                                                     <>
-                                                    <tr>
-                                                        <td>
-                                                            <NavLink to={`/cart/${e.id}`} onClick={handleClose}>
-                                                                <img src={e.imgdata} style={{width:"5rem", height:"5rem"}} alt="" />
-                                                            </NavLink> 
-                                                        </td>
-                                                        <td>
-                                                            <p>{e.rname}</p>
-                                                            <p>Price: ${e.price}</p>
-                                                            <p>Quantity: {e.qnty}</p>
-                                                            <p></p>
-                                                            <i style={{color:"red", fontSize:20, cursor:"pointer"}} className='fas fa-trash smalltrash' onClick={()=>dlt(e.id)}></i>
-                                                        </td>
-                                                        <td className='mt-5'>
-                                                            <i style={{color:"red", fontSize:20, cursor:"pointer"}} className='fas fa-trash largetrash' onClick={()=>dlt(e.id)}></i>
-                                                        </td>
-                                                    </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <NavLink to={`/cart/${e.id}`} onClick={handleClose}>
+                                                                    <img src={e.imgdata} style={{ width: "5rem", height: "5rem" }} alt="" />
+                                                                </NavLink>
+                                                            </td>
+                                                            <td>
+                                                                <p>{e.rname}</p>
+                                                                <p>Price: ${e.price}</p>
+                                                                <p>Quantity: {e.qnty}</p>
+                                                                <p></p>
+                                                                <i style={{ color: "red", fontSize: 20, cursor: "pointer" }} className='fas fa-trash smalltrash' onClick={() => dlt(e.id)}></i>
+                                                            </td>
+                                                            <td className='mt-5'>
+                                                                <i style={{ color: "red", fontSize: 20, cursor: "pointer" }} className='fas fa-trash largetrash' onClick={() => dlt(e.id)}></i>
+                                                            </td>
+                                                        </tr>
                                                     </>
                                                 )
                                             })
@@ -118,10 +120,6 @@ const Header = () => {
                                 <img src={img} alt="/" className='emptycart_img' style={{ width: "5rem", padding: 10 }} />
                             </div>
                     }
-
-                    {/* <MenuItem onClick={handleClose}>Profile</MenuItem>
-                        <MenuItem onClick={handleClose}>My account</MenuItem>
-                        <MenuItem onClick={handleClose}>Logout</MenuItem> */}
 
                 </Menu>
             </Navbar>

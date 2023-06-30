@@ -7,7 +7,7 @@ const Carddata = [
         price: 499,
         rating: "3.8",
         arrimg: "https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp",
-        qnty:0
+        qnty: 0
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ const Carddata = [
         price: 999,
         rating: "4.5",
         arrimg: "https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp",
-        qnty:0
+        qnty: 0
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ const Carddata = [
         price: 1300,
         rating: "4.1",
         arrimg: "https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp",
-        qnty:0
+        qnty: 0
     },
     {
         id: 4,
@@ -37,7 +37,7 @@ const Carddata = [
         price: 95,
         rating: "3.8",
         arrimg: "https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp",
-        qnty:0
+        qnty: 0
     },
     {
         id: 5,
@@ -47,7 +47,7 @@ const Carddata = [
         price: 399,
         rating: "4",
         arrimg: "https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp",
-        qnty:0
+        qnty: 0
     },
     {
         id: 6,
@@ -57,7 +57,7 @@ const Carddata = [
         price: 50,
         rating: "4.5",
         arrimg: "https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp",
-        qnty:0
+        qnty: 0
     },
     {
         id: 7,
@@ -67,7 +67,7 @@ const Carddata = [
         price: 79,
         rating: "3.9",
         arrimg: "https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp",
-        qnty:0
+        qnty: 0
     },
     {
         id: 8,
@@ -77,7 +77,7 @@ const Carddata = [
         price: 233,
         rating: "3.8",
         arrimg: "https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp",
-        qnty:0
+        qnty: 0
     },
     {
         id: 9,
@@ -87,9 +87,9 @@ const Carddata = [
         price: 140,
         rating: "3.8",
         arrimg: "https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp",
-        qnty:0
+        qnty: 0
     }
-    
+
 ];
 
 export default Carddata;
